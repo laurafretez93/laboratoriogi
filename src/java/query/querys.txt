@@ -1,0 +1,5 @@
+SELECT a.id, a.id_menu_item, a.id_grupo,c.nombre 
+FROM  permisos as a INNER JOIN menu_items as b ON a.id_menu_item=b.id
+		    INNER JOIN grupos as c ON a.id_grupo=c.id
+WHERE a.id_grupo=(SELECT u.id_grupo FROM usuarios as u WHERE u.nombre='jacosta' AND u.clave='123' 
+	         AND u.estado )

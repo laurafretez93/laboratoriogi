@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  href="../Recursos/css/w3.css"/>
+        <script src="../Recursos/js/jquery-3.2.1.min.js"></script>
+        <script src="../Recursos/js/GenerarPedidosJS.js"></script>
+    
+    </head>
+    <body>
+        <center>
+        <div style=" width: 800px;">
+           <div  style="border: 1px solid;  width: 750px;">
+            <form>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label>Codigo Presupuesto</label></td>
+                            <td><input type="text" id="codigo_presupuesto" size="10px" onkeydown="
+                                    //alert(event.keyCode);
+                                    if (event.keyCode === 13) {
+                                        RecuperarCabDet();
+                                       
+                                    }"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Fecha</label></td>
+                            <td><input type="date" id="dat_fecha" size="20px"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label>Usuario </label></td>
+                            <td><input type="text" id="codigo_grupo" size="10px"/> <input type="text" id="grupo_des" size="30px"/></td>
+                        </tr>
+                       
+                        <tr>
+                            <td><label>Observacion </label></td>
+                            <td><input type="text" id="obsv_presupuesto" size="70px"/> </td>
+                        </tr>
+                        
+                        
+                        <tr>
+                            <td><label>Datos del Producto </label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label>Codigo</label><input type="text" onkeydown="
+                                    //alert(event.keyCode);
+                                    if (event.keyCode === 13) {
+                                       // recuperarDatosProductos();
+                                    }
+
+                                    if (event.keyCode === 113) {
+                                        //LLAMAR AL BUSCADOR DE PRODUCTOS
+                                    }" id="codproducto" size="5px"/><label>Descripcion</label> <input type="text" id="descrip_producto" size="30px"/>
+                                <label>Cantidad</label><input type="text" id="cantidad_producto" onkeydown="
+                                                                                                              if (event.keyCode === 13) {
+                                                                                                                  //  if(verificarFilasTabla()){
+                                                                                                                  agregarFilaPedidos();
+                                                                                                                  //limpiarDetaProductos();
+                                                                                                                   
+                                                                                                                  //}
+
+
+                                                                                                              }
+
+                                                              " size="5px"/><label>Precio</label><input type="text" id="precio_producto" size="10px"/> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </form>
+            </div>
+            <div style="border: 1px solid;  width: 750px; height: 250px;">
+                <table border="1" > 
+                    <thead>
+                        <tr>
+                            <th style=" width: 5%;">Codigo</th>
+                            <th style=" width: 60%;">Descripcion</th>
+                            <th style=" width: 5%;">Cantidad</th>
+                            <th style=" width: 25%;">Total</th>
+                            <th style=" width: 5%;"><img src="../Recursos/img/update.png"/></th>
+                            <th style=" width: 5%;"><img src="../Recursos/img/delete.png"/></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabladetalleproductos">
+                        
+                    </tbody>
+                    
+                    
+
+                </table>
+            </div>
+            <br>
+            <label>MONTO TOTAL  </label>
+            <input type="text" id="montototalpedido">
+            <br>
+            <br>
+            <button style="height: 30px; size: 20px " onclick="prepararJsonPedidos();">GENERAR PEDIDO</button>
+            <button style="height: 30px; size: 20px" onclick="anularPedido();">ANULAR</button>
+            <button onclick="limpiarPedido();" style="height: 30px; size: 20px">CANCELAR</button>
+            <button onclick="MostrarAyuda();" style="height: 30px; size: 20px">AYUDA</button>
+        </div>
+
+    </center>
+    </body>
+</html>

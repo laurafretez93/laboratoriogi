@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Recursos/css/w3.css">
+        <script type="text/javascript" src="../Recursos/js/menuItemJS.js"></script>
+
+    </head>
+    <body>
+        <div class="w3-container w3-teal">
+            <h2>MANTENER OPCIONES DEL MENU  </h2>
+        </div>
+
+        <form class="w3-container" action="/LaboratorioWEBLCI/menuitemCTRL" method="POST">
+            <label class="w3-text-teal"><b>Codigo</b></label>
+            <input class="w3-input w3-border w3-light-grey" type="text" id="id_menu_item">
+
+            <label class="w3-text-teal"><b>Nombre</b></label>
+            <input class="w3-input w3-border w3-light-grey" type="text" id="nombre_menu_item">
+
+            <label class="w3-text-teal"><b>Observación</b></label>
+            <input class="w3-input w3-border w3-light-grey" type="text" id="obsv_menu_item">
+            
+            <div>
+                <select id="lista_combo_menu"></select>
+            </div>
+            
+            
+            <div>  
+                 <input class="w3-input w3-border w3-padding"
+                        type="text" placeholder="Ingrese nombre a buscar"
+                        id="datofiltro" onkeyup="myFunction()">
+                
+                <table class="w3-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NOMBRE</th>
+                            <th>OBSERVACION</th>
+                            <th>MENU</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuepotablaMenuItem">
+
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+            <button class="w3-btn w3-blue-grey" name="opc_agregar"  type="button" onclick="agregarMenuItem();">AGREGAR</button>
+            <button class="w3-btn w3-blue-grey" name="opc_modificar" type="button" onclick="modificarMenuItem();">MODIFICAR</button>
+            <button class="w3-btn w3-blue-grey" name="opc_eliminar" type="button"  onclick="eliminarMenuItem();">ELIMINAR</button>
+
+        </form>
+
+    </body>
+</html>
