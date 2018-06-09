@@ -9,5 +9,5 @@
  * @author Pandita
  */
 public class claudioADD {
-    
+    private String nombre;
 }
